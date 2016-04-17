@@ -119,7 +119,8 @@ $(document).ready(function () {
 <div id="loading-and-processing-the-data" class="section level2">
 <h2>Loading and processing the data</h2>
 <p>First we load the information into a data frame, fixing the data types as necessary and removing NA values.</p>
-<pre class="r"><code>activity &lt;- read.csv(&quot;activity.csv&quot;, colClasses = c(&quot;integer&quot;, &quot;Date&quot;, &quot;factor&quot;))
+<pre class="r"><code>echo = TRUE  # Always make code visible
+activity &lt;- read.csv(&quot;activity.csv&quot;, colClasses = c(&quot;integer&quot;, &quot;Date&quot;, &quot;factor&quot;))
 activity &lt;- na.omit(activity)
 #we add a column for &quot;month&quot; by getting it from the &quot;Date&quot;
 activity$month &lt;- as.numeric(format(activity$date, &quot;%m&quot;))

@@ -2,7 +2,9 @@
 title: "reproducible research project1"
 author: "Andrew Weston"
 date: "April 17, 2016"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 ---
@@ -16,6 +18,7 @@ output: html_document
 ##Loading and processing the data
 First we load the information into a data frame, fixing the data types as necessary and removing NA values.
 ```{r}
+echo = TRUE  # Always make code visible
 activity <- read.csv("activity.csv", colClasses = c("integer", "Date", "factor"))
 activity <- na.omit(activity)
 #we add a column for "month" by getting it from the "Date"
